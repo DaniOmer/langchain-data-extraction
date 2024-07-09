@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Robert B. Ford",
+    "year": "2023",
+    "salary": "$1,500,000",
+    "bonus": "0",
+    "stock_awards": "$7,436,600",
+    "other_compensation": "$283,392",
+    "total_compensation": "$23,268,171"
+  },
+  {
+    "name": "Robert E. Funck, Jr.",
+    "year": "2023",
+    "salary": "$875,000",
+    "bonus": "0",
+    "stock_awards": "$2,593,908",
+    "other_compensation": "$238,790",
+    "total_compensation": "$8,992,208"
+  },
+  {
+    "name": "Philip P. Boudreau",
+    "year": "2023",
+    "salary": "$513,943",
+    "bonus": "0",
+    "stock_awards": "$786,041",
+    "other_compensation": "$44,083",
+    "total_compensation": "$3,317,182"
+  },
+  {
+    "name": "Hubert L. Allen",
+    "year": "2023",
+    "salary": "$830,000",
+    "bonus": "0",
+    "stock_awards": "$1,959,639",
+    "other_compensation": "$228,916",
+    "total_compensation": "$7,420,660"
+  },
+  {
+    "name": "Lisa D. Earnhardt",
+    "year": "2023",
+    "salary": "$737,654",
+    "bonus": "0",
+    "stock_awards": "$1,684,197",
+    "other_compensation": "$85,380",
+    "total_compensation": "$5,498,436"
+  },
+  {
+    "name": "Daniel G. Salvadori",
+    "year": "2023",
+    "salary": "$790,000",
+    "bonus": "0",
+    "stock_awards": "$1,880,183",
+    "other_compensation": "$91,977",
+    "total_compensation": "$5,934,830"
+  }
+]

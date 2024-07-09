@@ -81,7 +81,7 @@ posthog==3.5.0
 protobuf==4.25.3
 pyasn1==0.6.0
 pyasn1_modules==0.4.0
-pydantic==2.7.2
+pydantic==1.10.12
 pydantic_core==2.18.3
 Pygments==2.18.0
 pypdf==4.2.0

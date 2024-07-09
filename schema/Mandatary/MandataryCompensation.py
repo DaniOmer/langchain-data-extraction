@@ -1,3 +1,4 @@
+from typing import List
 from langchain_core.pydantic_v1 import BaseModel, Field
 
 class MandataryCompensation(BaseModel):
@@ -29,3 +30,8 @@ class MandataryCompensation(BaseModel):
     total_compensation: str = Field(
         ..., description= "Total Compensation earned by the non employee director. Returns 0 if not find"
     )
+
+class ExtractionData(BaseModel):
+    """Extracted relevant information about executive officers compensation"""
+
+    executive_compensations: List[MandataryCompensation]
