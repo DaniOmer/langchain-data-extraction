@@ -34,4 +34,4 @@ class MandataryCompensation(BaseModel):
 class ExtractionData(BaseModel):
     """Extracted relevant information about executive officers compensation"""
 
-    executive_compensations: List[MandataryCompensation]
+    mandatary_compensations: List[MandataryCompensation]

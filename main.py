@@ -10,9 +10,10 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 
-from schema.Executive.ExecutiveCompensation import ExtractionData as ExecutiveExtrationData
-from schema.Mandatary.MandataryCompensation import ExtractionData as MandatoryExtractionInformation
+from schema.Executive.ExecutiveCompensation import ExtractionData as ExecutiveExtrationSchema
+from schema.Mandatary.MandataryCompensation import ExtractionData as MandatoryExtractionSchema
 from services.executive.executive_compensation import get_executive_compensations
+from services.mandatary.mandatary_compensation import get_mandatary_compensations
 
 llm = ChatOpenAI(model="gpt-4-0125-preview", temperature=0)
 
@@ -49,8 +50,8 @@ def extract_data(ExtractionData, invoke_prompt, file_path):
     return results
 
 def handler():
-    executive_output_path = "ABBOTT-LABORATORIES-EXECUTIVE.json"
-    mandatary_output_path = "ABBOTT-LABORATORIES-MANDATARY.json"
+    executive_output_path = "data/ABBOTT-LABORATORIES-EXECUTIVE.json"
+    mandatary_output_path = "data/ABBOTT-LABORATORIES-MANDATARY.json"
 
     invoke_prompt_for_executive = "Key informations associated with executive officers."
     invoke_prompt_for_mandatary = "Key informations associated with non-employee directors also known as board committees."
@@ -58,8 +59,11 @@ def handler():
         "./filings/ABBOTT-LABORATORIES-DEF-14-PROXY.pdf"
     )
 
-    executive_compensations_data = extract_data(ExecutiveExtrationData, invoke_prompt_for_executive, file_path)
-    get_executive_compensations(executive_compensations_data, executive_output_path)
+    # executive_compensations_data = extract_data(ExecutiveExtrationSchema, invoke_prompt_for_executive, file_path)
+    # get_executive_compensations(executive_compensations_data, executive_output_path)
 
+    mandatary_compensation_data = extract_data(MandatoryExtractionSchema, invoke_prompt_for_mandatary, file_path)
+    get_mandatary_compensations(mandatary_compensation_data, mandatary_output_path)
+    # print(mandatary_compensation_data)
 
 handler()
