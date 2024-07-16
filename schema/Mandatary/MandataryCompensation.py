@@ -1,37 +1,42 @@
+import datetime
 from typing import List
 from langchain_core.pydantic_v1 import BaseModel, Field
 
 class MandataryCompensation(BaseModel):
     """
-        Provide a detailed summary of the compensation of each named non employee director
-        during the year including salary, bonus, stock awards, fees earned, all other 
-        compensation and total compensation.
+    Provide a complete list of each Non-Employee Director (also known as a board director or director nominee) 
+    who served on the Board during the year. I want you to retrieve all the board director present in the text.
     """
 
     name: str = Field(
         ..., description="The full name of the non employee director"
     )
-    year: str = Field(
-        ..., description="The year the compensation is related to"
-    )
     salary: str = Field(
-        ..., description="The salary of the non employee director.  Returns 0 if not find"
+        default="0",
+        description="The salary of the non employee director. Returns 0 if not find",
     )
     bonus: str = Field(
-        ...,
+        default="0",
         description="The bonus of the non employee director. Returns 0 if not find",
     )
     stock_awards: str = Field(
-        ..., description="The Stock Awards of the non employee director as specified in the text. Returns 0 if not find"
+        default="0",
+        description="The Stock Awards of the non employee director as specified in the text. Returns 0 if not find"
     )
     other_compensation: str = Field(
-        ..., description= "Other Compensation earned by the non employee director. Returns 0 if not find"
+        default="0",
+        description= "Other Compensation earned by the non employee director. Returns 0 if not find"
     )
     total_compensation: str = Field(
-        ..., description= "Total Compensation earned by the non employee director. Returns 0 if not find"
+        default="0",
+        description= "Total Compensation earned by the non employee director. Returns 0 if not find"
+    )
+    year: str = Field(
+        default_factory=lambda: str(datetime.datetime.now().year -1),
+        description="The year the compensation is related to"
     )
 
 class ExtractionData(BaseModel):
-    """Extracted relevant information about executive officers compensation"""
+    """Extracted relevant information about non employee director compensation."""
 
     mandatary_compensations: List[MandataryCompensation]
