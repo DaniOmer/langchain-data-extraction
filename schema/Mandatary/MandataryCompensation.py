@@ -31,10 +31,6 @@ class MandataryCompensation(BaseModel):
         default="0",
         description= "Total Compensation earned by the non employee director. Returns 0 if not find"
     )
-    year: str = Field(
-        default_factory=lambda: str(datetime.datetime.now().year -1),
-        description="The year the compensation is related to"
-    )
 
 class ExtractionData(BaseModel):
     """Extracted relevant information about non employee director compensation."""

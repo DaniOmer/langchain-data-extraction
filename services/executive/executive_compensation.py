@@ -4,8 +4,9 @@ def get_executive_compensations(results, output_path):
     data = []
     for executive in results.executive_compensations:
         data.append({
-            'name': executive.name, 
-            'year': executive.year, 
+            'name': executive.name,
+            'position': executive.position,
+            'gender': executive.gender,
             'salary': executive.salary, 
             'bonus': executive.bonus, 
             'stock_awards': executive.stock_awards,

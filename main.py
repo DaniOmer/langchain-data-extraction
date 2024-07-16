@@ -69,9 +69,9 @@ def handler(event):
         get_executive_compensations(executive_compensations_data, executive_output_path)
 
 event = {
-    'file_path' : './filings/AMAZON-DEF-14-PROXY.pdf',
-    'role' : 'Mandatary',
-    'company_name': 'AMAZON'
+    'file_path' : './filings/APPLE-DEF-14-PROXY.pdf',
+    'role' : 'Comex',
+    'company_name': 'APPLE'
 }
 
 handler(event)

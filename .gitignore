@@ -2,3 +2,6 @@
 .venv
 /filings
 /data
+
+__pycache__/
+*.py[cod]
