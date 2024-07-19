@@ -15,7 +15,9 @@ from schema.Mandatary.MandataryCompensation import ExtractionData as MandatoryEx
 from services.executive.executive_compensation import get_executive_compensations
 from services.mandatary.mandatary_compensation import get_mandatary_compensations
 
-llm = ChatOpenAI(model="gpt-4-0125-preview", temperature=0)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=1)
+# llm = ChatOpenAI(model="gpt-4-0125-preview", temperature=1)
+# llm = ChatOpenAI(model="gpt-3.5-turbo-0125", temperature=0)
 
 def extract_data(ExtractionData, invoke_prompt, file_path):
 
@@ -23,7 +25,8 @@ def extract_data(ExtractionData, invoke_prompt, file_path):
     documents = loader.load()
 
     vectorstore = Chroma.from_documents(documents=documents, embedding=OpenAIEmbeddings())
-    retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 20})
+    # retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 30})
+    retriever = vectorstore.as_retriever(search_type="mmr")
 
     prompt = ChatPromptTemplate.from_messages(
         [
@@ -69,9 +72,9 @@ def handler(event):
         get_executive_compensations(executive_compensations_data, executive_output_path)
 
 event = {
-    'file_path' : './filings/APPLE-DEF-14-PROXY.pdf',
-    'role' : 'Comex',
-    'company_name': 'APPLE'
+    'file_path' : './filings/ABBOTT-LABORATORIES-DEF-14-PROXY.pdf',
+    'role' : 'Mandatary',
+    'company_name': "ABBOTT-LABORATORIES"
 }
 
 handler(event)

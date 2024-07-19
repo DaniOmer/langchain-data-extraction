@@ -4,7 +4,8 @@ def get_mandatary_compensations(results, output_path):
     data = []
     for mandatary in results.mandatary_compensations:
         data.append({
-            'name': mandatary.name, 
+            'name': mandatary.name,
+            'gender': mandatary.gender,
             'salary': mandatary.salary, 
             'bonus': mandatary.bonus, 
             'stock_awards': mandatary.stock_awards,

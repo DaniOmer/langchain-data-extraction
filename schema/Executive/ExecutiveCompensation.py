@@ -3,14 +3,9 @@ from langchain_core.pydantic_v1 import BaseModel, Field
 
 class ExecutiveCompensation(BaseModel):
     """
-        Provide a complete list of executive officers according to the executive compensation table.
+        Provide a complete list of executive officers according to the text.
         I want you to retrieve only executive officers present in the text for the most recent year.
     """
-    # """
-    #     Provide a detailed summary of the compensation of each named executive officer
-    #     during the year including salary, bonus, stock awards, fees earned, all other 
-    #     compensation and total compensation.
-    # """
 
     name: str = Field(
         ...,
