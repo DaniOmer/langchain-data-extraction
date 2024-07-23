@@ -13,7 +13,7 @@ from langchain_openai import OpenAIEmbeddings
 from schema.Company.Company import ExtractionData as CompanySchema
 from services.company.company import get_company_data
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=1)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 def extract_data(ExtractionData, invoke_prompt, file_path):
 
@@ -61,8 +61,8 @@ def handler(event):
 
 
 event = {
-    'file_path' : './filings/ABBOTT-LABORATORIES-DEF-14-PROXY.pdf',
-    'company_name': "ABBOTT-LABORATORIES"
+    'file_path' : './filings/ROKU-INC-DEF-14-PROXY.pdf',
+    'company_name': "ROKU-INC"
 }
 
 handler(event)

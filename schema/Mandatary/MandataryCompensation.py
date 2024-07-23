@@ -17,23 +17,23 @@ class MandataryCompensation(BaseModel):
     )
     salary: str = Field(
         default="0",
-        description="The salary of the non employee director. Returns 0 if not find",
+        description="The salary or fees earned or paid in cash of the non employee director.",
     )
     bonus: str = Field(
         default="0",
-        description="The bonus of the non employee director. Returns 0 if not find",
+        description="The bonus of the non employee director.",
     )
     stock_awards: str = Field(
         default="0",
-        description="The Stock Awards of the non employee director as specified in the text. Returns 0 if not find"
+        description="The Stock Awards, also known as option awards, of the non employee director as specified in the text."
     )
     other_compensation: str = Field(
         default="0",
-        description= "Other Compensation earned by the non employee director. Returns 0 if not find"
+        description= "Other Compensation earned by the non employee director."
     )
     total_compensation: str = Field(
         default="0",
-        description= "Total Compensation earned by the non employee director. Returns 0 if not find"
+        description= "Total Compensation earned by the non employee director."
     )
 
 class ExtractionData(BaseModel):
