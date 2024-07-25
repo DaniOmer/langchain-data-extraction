@@ -1,12 +1,11 @@
-import datetime
 from typing import List
 from langchain_core.pydantic_v1 import BaseModel, Field
 
 class MandataryCompensation(BaseModel):
     """
-    Provide a complete list of each Non-Employee Director (also known as a board director or director nominee) 
-    who served on the Board during the year. I want you to retrieve each person mention as board director in the 
-    text.
+        Provide a complete list of each Non-Employee Director (also known as a board director or director nominee) 
+        who served on the Board during the year. I want you to retrieve each person mention as board director in the 
+        text.
     """
 
     name: str = Field(
